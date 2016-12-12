@@ -1,0 +1,38 @@
+{
+  "name": "es6-sass",
+  "version": "1.0.0",
+  "description": "ES6 and SASS Starter Kit to build  javascript ES6/SASS project runnable on any browser",
+  "main": "main.js",
+  "bin": {
+    "es6-sass": "make"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/a-daaif/es6-sass.git"
+  },
+  "preferGlobal": true,
+  "keywords": [
+    "javascript",
+    "boilerplate",
+    "es6",
+    "es2015",
+    "babel",
+    "sass",
+    "starter kit"
+  ],
+  "dependencies": {
+    "babel-core": "^6.20.0",
+    "babel-plugin-transform-es2015-modules-umd": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "chokidar": "^1.6.*",
+    "eslint": "^3.12.0",
+    "fs-extra": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^3.13.0",
+    "rollup": "^0.36.*",
+    "uglify-js": "^2.7.5"
+  },
+  "author": "Aziz DAAIF (http://www.daaif.net/)",
+  "license": "MIT",
+  "homepage": "https://github.com/a-daaif/es6-sass"
+}

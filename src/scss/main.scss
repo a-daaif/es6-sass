@@ -1,0 +1,14 @@
+@import "variables";
+
+
+div {
+  color: $color;
+  background: $bg_color;
+  width: $box-width;
+  min-height: $box-width * 0.6;
+  padding: 40px;
+  margin: 20px auto;
+  border: 2px solid black;
+  font-size: 4em;
+  text-align: center;
+}

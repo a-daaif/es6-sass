@@ -1,0 +1,10 @@
+div {
+    color: #0e1a00;
+    background: #f2d9ea;
+    width: 400px;
+    min-height: 240px;
+    padding: 40px;
+    margin: 20px auto;
+    border: 2px solid black;
+    font-size: 4em;
+    text-align: center; }
