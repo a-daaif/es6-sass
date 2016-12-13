@@ -7,8 +7,8 @@ module.exports = function(esskOptions) {
 
     return function () {
 
-        let jsSourcePath = `${esskOptions.jsDest}/${esskOptions.library}.js`,
-            jsOutputPath = `${esskOptions.jsDest}/${esskOptions.library}.min.js`,
+        var jsSourcePath = esskOptions.jsDest + path.sep + esskOptions.library + '.js',
+            jsOutputPath = esskOptions.jsDest + path.sep + esskOptions.library + '.min.js',
             outputJS = uglify.minify(jsSourcePath)
 
         /**
@@ -22,7 +22,7 @@ module.exports = function(esskOptions) {
                     reject(err)
                 } else {
                     utils.print('JS minified', 'confirm')
-                    utils.print(`Created file: ${jsOutputPath}`, 'cool')
+                    utils.print('Created file: ' + jsOutputPath , 'cool')
                     resolve()
                 }
             })

@@ -64,7 +64,7 @@ var spawn = require('child_process').spawn,
 
                 // extend the env variables with some other custom options
                 utils.extend(process.env, envVariables)
-                utils.print(`Executing: ${command}  ${args.join(' ')} \n`, 'confirm')
+                utils.print('Executing: ' + command + ' ' + args.join(' ') + '\n', 'confirm')
 
                 var cmd = spawn(path.normalize(command), args, {
                     stdio: 'inherit',
@@ -88,7 +88,7 @@ var spawn = require('child_process').spawn,
          * @returns { Array } files path list
          */
         listFiles(thisPath, mustDelete) {
-            utils.print(`Listing all the files in the folder: ${thisPath}`, 'confirm')
+            utils.print('Listing all the files in the folder: ' + thisPath , 'confirm')
             var files = []
             if (fs.existsSync(thisPath)) {
                 var tmpFiles = fs.readdirSync(thisPath)
@@ -114,7 +114,7 @@ var spawn = require('child_process').spawn,
          */
         clean(path) {
             var files = utils.listFiles(path, true)
-            utils.print(`Deleting the following files: \n   ${files.join('\n   ')}`, 'cool')
+            utils.print('Deleting the following files: \n '  + files.join('\n   '), 'cool')
         },
         /**
          * Log messages in the terminal using custom colors
@@ -139,7 +139,7 @@ var spawn = require('child_process').spawn,
                 default:
                     color = ''
             }
-            console.log(`${color} ${msg} \x1B[39m`)
+            console.log(color + msg + ' \x1B[39m')
         },
         resolve(projectPath, esskOptions) {
             esskOptions.jsBasePath = projectPath + path.sep + esskOptions.jsBasePath.replace('/', path.sep)
@@ -150,7 +150,7 @@ var spawn = require('child_process').spawn,
             return esskOptions
         },
         getDependencies() {
-            let content = fs.readFileSync(__dirname + '/../package.json', 'utf8')
+            var content = fs.readFileSync(__dirname + '/../package.json', 'utf8')
             return JSON.parse(content).dependencies
         }
     }

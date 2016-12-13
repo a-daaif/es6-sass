@@ -28,13 +28,13 @@ module.exports = function(esskOptions) {
         }
 
         // run eslint when a source file gets updated
-        let jsMsg = `Watching files in the ${esskOptions.jsBasePath}${path.sep}**${path.sep}*.js path`
-        let scssMsg = `Watching files in the ${esskOptions.scssBasePath}${path.sep}**${path.sep}*.scss path\n`
+        var jsMsg = 'Watching files in the ' + esskOptions.jsBasePath + path.sep + '**' + path.sep + '*.js path'
+        var scssMsg = 'Watching files in the ' + esskOptions.scssBasePath + path.sep + '**' + path.sep+ '*.scss path\n'
         utils.print(jsMsg, 'cool')
         utils.print(scssMsg, 'cool')
         chokidar.watch([
-            `${esskOptions.jsBasePath}/**/*.js`,
-            `${esskOptions.scssBasePath}/**/*.scss`],
+            esskOptions.jsBasePath + '/**/*.js',
+            esskOptions.scssBasePath + '/**/*.scss'],
             {
                 ignoreInitial: true
         }).on('all', function (event) {

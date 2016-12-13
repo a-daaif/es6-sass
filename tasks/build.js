@@ -2,6 +2,7 @@ var utils = require('./_utils'),
   rollup = require( 'rollup' ),
   mkdirp = require('mkdirp'),
   fs = require('fs'),
+  path = require('path'),
   babel = require('babel-core')
 
 module.exports = function(esskOptions) {
@@ -17,13 +18,10 @@ module.exports = function(esskOptions) {
         return new Promise(function (resolve, reject) {
 
             rollup.rollup({
-                // The bundle's starting point. This file will be
-                // included, along with the minimum necessary code
-                // from its dependencies
-                entry: `${esskOptions.jsBasePath}/${esskOptions.library}.js`
+                entry: esskOptions.jsBasePath + path.sep + esskOptions.library +'.js'
             }).then(function (bundle) {
 
-                // convert to valid es5 code with babel
+
                 var result = babel.transform(
                     // create a single bundle file
                     bundle.generate({
@@ -40,7 +38,7 @@ module.exports = function(esskOptions) {
 
                 mkdirp(esskOptions.jsDest, function () {
                     try {
-                        fs.writeFileSync(`${esskOptions.jsDest}/${ esskOptions.library }.js`, result, 'utf8')
+                        fs.writeFileSync(esskOptions.jsDest + path.sep + esskOptions.library + '.js', result, 'utf8')
                         resolve()
                     } catch (e) {
                         utils.print(e, 'error')
