@@ -5,34 +5,39 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>ES6 in the browser NOW!</title>
 </head>
 <body>
-<h1>ES6 and SASS Starter Kit to build javascript ES6/SASS projects runnable on any browser</h1>
+<div class="container">
+    <div class="jumbotrons">
+        <h1>ES6 and SASS Starter Kit
+            <small>to build javascript ES6/SASS projects runnable on any browser</small></h1>
 
-<h2>Description</h2>
+    </div>
+    <h2>Description</h2>
 
-<h3>ES6  NOW ! Focus on development not on tooling !</h3>
+    <h3>ES6  NOW ! Focus on development not on tooling !</h3>
 
-<p>The purpose of this package is to set up a development environment that supports es6
-    (es2015) and the sass preprocessor. Installing this package globally allows you
-    to create a boilerplate project and give you via the command line tool es6-sass
-    the ability to transpile javascript es6 to one bundled minified es5 file and sass
-    files to a single compressed css file. </p>
-<p>The command line tool es6-sass allow you to :</p>
-<ol>
-    <li>init project </li>
-    <li> transpile an bundle es6 to es5</li>
-    <li>transpile .scss files to .css single file </li>
-    <li>eslint your javascript </li>
-    <li>uglify your javascript </li>
-    <li>compress your css </li>
-    <li>watching mode for js an scss change</li>
-</ol>
+    <p class="well">The purpose of this package is to set up a development environment that supports es6
+        (es2015) and the sass preprocessor. Installing this package globally allows you
+        to create a boilerplate project and give you via the command line tool es6-sass
+        the ability to transpile javascript es6 to one bundled minified es5 file and sass
+        files to a single compressed css file. </p>
+    <p>The command line tool es6-sass allow you to :</p>
+    <ol>
+        <li>init project </li>
+        <li> transpile an bundle es6 to es5</li>
+        <li>transpile .scss files to .css single file </li>
+        <li>eslint your javascript </li>
+        <li>uglify your javascript </li>
+        <li>compress your css </li>
+        <li>watching mode for js an scss change</li>
+    </ol>
 
 
-<h2>The structure of the generated project is as follows:</h2>
-<pre>
+    <h2>The structure of the generated project is as follows:</h2>
+    <pre>
     your_project/
     |_ node_modules/    # node modules folder
     |_ src/
@@ -52,31 +57,31 @@
     |_ package.json    #
 
 </pre>
-<h3>1 - Installation</h3>
+    <h3>1 - Installation</h3>
 
-<p>This package must be installed globally.</p>
-<pre><code>    npm install -g es6-sass
+    <p>This package must be installed globally.</p>
+    <pre><code>    npm install -g es6-sass
     </code></pre>
 
-<h3>2 - Create new project</h3>
+    <h3>2 - Create new project</h3>
 
-<pre><code>    mkdir my-project
+    <pre><code>    mkdir my-project
     cd my-project
     es6-sass init     # generates the structure of the project
 </code></pre>
-<h3>3 - Usage</h3>
+    <h3>3 - Usage</h3>
 
-<pre><code>    es6-sass build       # transpiles and bundles es6 to es5 single file
+    <pre><code>    es6-sass build       # transpiles and bundles es6 to es5 single file
     es6-sass sass        # transpile .scss files to css file and generate sourceMap file
     es6-sass minify      # uglify and generates .min.js file and compress .css file
     es6-sass eslint      # parse js files and show errors according to .eslintrc config file
     es6-sass watch       # enables the watch mode on all js an scss files
 </code></pre>
-<h3>4 - Customize es6 and scss entries</h3>
+    <h3>4 - Customize es6 and scss entries</h3>
 
-<p>es6-sass init generates a default .es6-sass config file. you can change defaults.</p>
+    <p>es6-sass init generates a default .es6-sass config file. you can change defaults.</p>
 
-<pre><code>module.exports  = {
+    <pre><code>module.exports  = {
     /**
     * the name bundled output files main.js and main.css
     * Olso the js namespace in the global scope window.main
@@ -100,5 +105,6 @@
     cssDest: 'dist/css'
 };
 </code></pre>
+</div>
 </body>
 </html>
